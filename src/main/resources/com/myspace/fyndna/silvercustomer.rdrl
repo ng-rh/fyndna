@@ -1,0 +1,12 @@
+package com.myspace.fyndna;
+
+import java.lang.Number;
+
+rule "silvercustomer"
+	dialect "mvel"
+	ruleflow-group "silvercustomer"
+	when
+		neft : NEFT( customer == "\"Silver\"" )
+	then
+		neft.setFlat_rate( 15 );
+end
